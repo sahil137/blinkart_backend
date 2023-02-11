@@ -1,9 +1,8 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import authRoutes from './auth.routes';
 
 const indexRoutes = express.Router();
 
-indexRoutes.get('/', (req: Request, res: Response) => {
-  res.json({ message: 'data recieved' });
-});
+indexRoutes.use('/auth', authRoutes);
 
 export default indexRoutes;
