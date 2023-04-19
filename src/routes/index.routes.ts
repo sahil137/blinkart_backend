@@ -1,9 +1,10 @@
 import express, { Request, Response } from 'express';
+import authRoutes from './auth.routes';
+const router = express.Router();
 
-const indexRoutes = express.Router();
-
-indexRoutes.get('/', (req: Request, res: Response) => {
+router.use('/auth', authRoutes);
+router.get('/', (req: Request, res: Response) => {
   res.json({ message: 'recieved' });
 });
 
-export default indexRoutes;
+export default router;
