@@ -1,9 +1,9 @@
 import StatusCodes from 'http-status-codes';
 
-class BaseError extends Error {
+class ErrorHandler extends Error {
   public readonly statusCode: number;
 
-  constructor(message: string, statusCode = StatusCodes.INTERNAL_SERVER_ERROR) {
+  constructor(statusCode = StatusCodes.INTERNAL_SERVER_ERROR, message: string) {
     super(message);
     this.message = message;
     this.statusCode = statusCode;
@@ -12,4 +12,4 @@ class BaseError extends Error {
   }
 }
 
-export default BaseError;
+export default ErrorHandler;
